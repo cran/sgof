@@ -6,31 +6,35 @@ sgof<-function(u,alpha=0.05,gamma=0.05){
 v=as.numeric(u<=gamma)
 n=length(v)
 
-SGoF=floor(max(n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1,0))
+
+SGoF=max(min(floor(n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1),sum(n*ecdf(u)(u)<=n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1)),0)
 
 su<-sort(u)
 jj<-which(u==1)
 if(length(jj)!=0) pi0<-(-1/n)*sum(log(1-u[-jj])) else pi0<-(-1/n)*sum(log(1-u))
 
-FDR_S<-(pi0*su[SGoF])/(ecdf(u)(su[SGoF]))
+if(SGoF==0){FDR_S<-0}else{FDR_S<-round((pi0*su[SGoF])/(ecdf(u)(su[SGoF])),4)}
 
 
-Nu1=n*(ecdf(su)(su)-su)-sqrt(n*ecdf(su)(su)*(1-ecdf(su)(su)))*qnorm(1-su)+1
-umax1=which.max(Nu1/n)
-
-max<-(ecdf(su)(su[umax1])-su[umax1])-sqrt((ecdf(su)(su[umax1])*(1-ecdf(su)(su[umax1])))/n)*qnorm(1-su[umax1])+(1/n)
-
-jj<-sum(ecdf(su)(su)<=max) 
+Nu1=pmax(n*(ecdf(su)(su)-su)-sqrt(n*ecdf(su)(su)*(1-ecdf(su)(su)))*qnorm(1-su)+1,0)
 
 
-a.p<-numeric(n)
-a.p[(jj+1):n]<-1
-a.p[1:jj]<-sapply(1:jj,function(i) a.p[i]<-min(su[which(n*ecdf(su)(su[i])<=Nu1)]))
+Nu2<-sapply(1:n,function(i) Nu2<-max(which(n*ecdf(su)(su)<=Nu1[i]),0))
+
+Nu<-pmin(Nu1,Nu2)
 
 
+
+Nmax=max(Nu,na.rm=T)
+
+
+a.p=rep(1,n)  
+for (i in 1:Nmax) {a.p[i]=min(su[as.integer(n*ecdf(su)(su[i]))<=Nu],na.rm=T)}
 
 return(c(list(Rejections=SGoF,FDR=FDR_S,Adjusted.pvalues=a.p)))
 }
+
+
 
 
 

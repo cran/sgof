@@ -12,7 +12,7 @@ if(sum(object$Adjusted.pvalues>object$alpha)==length(object$data)){attributes(ta
 
 
 cat("\n")
-res <- list(Rejections=object$Rejections,FDR=round( object$FDR,3),Adjusted.pvalues=tabla)
+res <- list(Rejections=object$Rejections,FDR=object$FDR,Adjusted.pvalues=tabla)
 
 return(res)
 }

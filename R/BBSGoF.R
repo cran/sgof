@@ -1,6 +1,10 @@
 BBSGoF <-
 function(u,alpha=0.05,gamma=0.05,kmin=2,kmax=min(length(u)%/%10,100),tol=10,adjusted.pvalues=FALSE,blocks=NA){
 
+if (kmin>kmax) {  stop("kmax should be larger than kmin")}
+n=length(u)
+if (kmax==n) {stop("kmax should be lower than n")}
+
 
 
 
@@ -159,7 +163,12 @@ if(vb1[i]<0) sb1[i]<-0 else sb1[i]=sqrt(vb1[i])
 
 low<-beta1-sb1*qnorm(1-u)
 tlow<-(exp(low)/(1+exp(low)))-u
-effects=pmax(n*tlow,0,na.rm = T)
+effects1=floor(pmax(n*tlow,0,na.rm = T))
+effects2<-numeric(n)
+for(i in 1:n){
+effects2[i]<-max(which(n*ecdf(su)(su)<=effects1[i]),0)}
+effects<-pmin(effects1,effects2)
+
 
 umax2<-which.max(effects)
 au2=rep(1,n)
@@ -167,16 +176,13 @@ out<-outer(effects,n*ecdf(u)(u),">=")
 ind<-which(sapply(1:n, function(i) ind<-length(effects[out[,i]]))!=0) 
        
 
-
-au2[ind]<-sapply(ind,function(i) au2[i]<-min(u[which(n*ecdf(u)(u[i])<=effects)]))
+au2[ind]<-sapply(ind,function(i) au2[i]<-min(u[which(as.integer(n*ecdf(u)(u[i]))<=effects)]))
 
 return(sort(au2))
 }
 
 
 
-
-library(stats)
 
 v=as.numeric(u<=gamma)
 n=length(v)
@@ -325,7 +331,7 @@ vb2=varo/g2
 sb1=sqrt(vb1[vb1>=0])
 sb2=sqrt(vb2[vb2>=0])
 
-low<-sapply(jmin:jmax, function(j) low=beta1[j]-sb1[j]*qnorm(.95))
+low<-sapply(jmin:jmax, function(j) low=beta1[j]-sb1[j]*qnorm(1-alpha))
 tlow.original<- exp(low)/(1+exp(low))-gamma
 
 ii=unique(c(which(vb1>=tol*median(vb1)),which(vb2>=tol*median(vb2)),which(vb2<=0),which(vb1<=0)))
@@ -337,20 +343,23 @@ if (length(ii)!=0) tlow=exp(low[-ii])/(1+exp(low[-ii]))-gamma else tlow=exp(low)
 
 effects=pmax(n*tlow,0,na.rm = T)
 
+
+
 Mini=min(tlow,na.rm = T)
 
-mineffects=max(n*Mini,0) #effects declared by BB-SGoF based on kN=k^N
+mineffects=floor(max(n*Mini,0)) #effects declared by BB-SGoF based on kN=k^N
 
+mineffects<-min(mineffects,sum(n*ecdf(u)(u)<=mineffects))
 
 
 kN=1+which(tlow.original==Mini)  #number of blocks for BB-SGoF decision
-SGoF=max(n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1,0)
+SGoF=floor(max(min(n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1,sum(n*ecdf(u)(u)<=n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1)),0))
 
 su<-sort(u)
 jj<-which(u==1)
 if(length(jj)!=0) pi0<-(-1/n)*sum(log(1-u[-jj])) else pi0<-(-1/n)*sum(log(1-u))
 
-FDR_BB<-(pi0*su[mineffects])/(ecdf(u)(su[mineffects]))
+if(mineffects==0){FDR_BB<-0}else{FDR_BB<-round((pi0*su[mineffects])/(ecdf(u)(su[mineffects])),4)}
 
 
 S<-sapply(jmin:jmax,function(j) S<-sum((AA[[j]]-prob[j]*BB[[j]])^2)/(prob[j]*(1-prob[j])))
@@ -359,14 +368,26 @@ Zvalue<-sapply(jmin:jmax,function(j) Zvalue<-(S[j]-sum(BB[[j]]))/sqrt(2*sum(BB[[
 
 pvalue<-sapply(jmin:jmax,function(j) pvalue<-1-pnorm(Zvalue[j]))
 
+Tarone.pvalue.auto=round(pvalue[kN-1],4)
+
 a=(1-ro[kN-1])*prob[kN-1]/ro[kN-1]
 b=(1-ro[kN-1])*(1-prob[kN-1])/ro[kN-1]
-n.blocks=(jmin:jmax)+1 
+
+n.blocks=(jmin:jmax)+1
+
+if (length(ii)==0) n.blocks=n.blocks else n.blocks=n.blocks[-ii]
+
+if (length(ii)==0) deleted.blocks=NA else deleted.blocks=(ii+1)
+
+if (length(ii)==0) cor=ro else cor=ro[-ii]
+
+if (length(ii)==0) Tarone.pvalues=pvalue else Tarone.pvalues=pvalue[-ii]
+
 
 if(adjusted.pvalues==TRUE){
-return(c(list(Rejections=mineffects,FDR=FDR_BB,Adjusted.pvalues=BBSGoF.ap(u,blocks),effects=effects,SGoF=SGoF,automatic.blocks=kN,deleted.blocks=(ii+1),n.blocks=n.blocks[-ii],p=prob[kN-1],cor=ro[-ii],Tarone.pvalues=pvalue[-ii],Tarone.pvalue.auto=pvalue[kN-1],beta.parameters=c(a,b),betabinomial.parameters=c(prob[kN-1],ro[kN-1]),sd.betabinomial.parameters=c(sqrt(varp[kN-1]),sqrt(varo[kN-1]))))) }
+return(c(list(Rejections=mineffects,FDR=FDR_BB,Adjusted.pvalues=BBSGoF.ap(u,blocks),effects=floor(effects),SGoF=SGoF,automatic.blocks=kN,deleted.blocks=deleted.blocks,n.blocks=n.blocks,p=prob[kN-1],cor=cor,Tarone.pvalues=Tarone.pvalues,Tarone.pvalue.auto=Tarone.pvalue.auto,beta.parameters=c(round(a,4),round(b,4)),betabinomial.parameters=c(round(prob[kN-1],4),round(ro[kN-1],4)),sd.betabinomial.parameters=c(round(sqrt(varp[kN-1]),4),round(sqrt(varo[kN-1]),4))))) }
 else{
-return(c(list(Rejections=mineffects,FDR=FDR_BB,effects=effects,SGoF=SGoF,automatic.blocks=kN,deleted.blocks=(ii+1),n.blocks=n.blocks[-ii],p=prob[kN-1],cor=ro[-ii],Tarone.pvalues=pvalue[-ii],Tarone.pvalue.auto=pvalue[kN-1],beta.parameters=c(a,b),betabinomial.parameters=c(prob[kN-1],ro[kN-1]),sd.betabinomial.parameters=c(sqrt(varp[kN-1]),sqrt(varo[kN-1])))))}
+return(c(list(Rejections=mineffects,FDR=FDR_BB,effects=floor(effects),SGoF=SGoF,automatic.blocks=kN,deleted.blocks=deleted.blocks,n.blocks=n.blocks,p=prob[kN-1],cor=cor,Tarone.pvalues=Tarone.pvalues,Tarone.pvalue.auto=Tarone.pvalue.auto,beta.parameters=c(round(a,4),round(b,4)),betabinomial.parameters=c(round(prob[kN-1],4),round(ro[kN-1],4)),sd.betabinomial.parameters=c(round(sqrt(varp[kN-1]),4),round(sqrt(varo[kN-1]),4)))))}
 }
 
 if(missing(blocks)&adjusted.pvalues==T){stop("blocks argument is required to cumpute the Adjusted p-values")}
@@ -377,6 +398,7 @@ res<-bbsgof(u,alpha,gamma,kmin,kmax,tol,adjusted.pvalues,blocks)
 res$data<-sort(u)
 res$adjusted.pvalues<-adjusted.pvalues
 res$blocks<-blocks
+
 res$n<-length(u)
 res$alpha<-alpha
 res$gamma<-gamma

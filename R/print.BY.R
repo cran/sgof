@@ -1,4 +1,4 @@
-print.BH <-
+print.BY <-
 function(x, ...){
 cat("Call:\n") 
 print(x$call) 

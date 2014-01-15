@@ -4,15 +4,16 @@ function(u,alpha=0.05){
 bh<-function(u,alpha=0.05){
 
 n=length(u)
-r=rank(u)
+r=rank(u,ties.method="max")
 
-bh=round(max(c(r[u<=(r/n)*alpha],0),na.rm = T) )#effects declared by BH
+
+bh=max(c(r[u<=(r/n)*alpha],0),na.rm = T) 
 
 su<-sort(u)
 jj<-which(u==1)
 if(length(jj)!=0) pi0<-(-1/n)*sum(log(1-u[-jj])) else pi0<-(-1/n)*sum(log(1-u))
 
-FDR_BH<-(pi0*su[bh])/(ecdf(u)(su[bh]))
+if(bh==0){FDR_BH<-0}else{FDR_BH<-round((pi0*su[bh])/(ecdf(u)(su[bh])),4)}
 
 
 

@@ -17,8 +17,8 @@
 
 
 \references{
-Benjamini Y, Hochberg Y (1995): Controlling the False Discovery Rate: A
-Practical and Powerful Approach to Multiple Testing. Journal of the Royal Statistical Society Series B (Methodological) 57, 289-300.
+Benjamini Y and Hochberg Y (1995). Controlling the False Discovery Rate: A
+Practical and Powerful Approach to Multiple Testing. \emph{Journal of the Royal Statistical Society Series B (Methodological)} 57, 289--300.
 }
 
 
@@ -28,14 +28,14 @@ Practical and Powerful Approach to Multiple Testing. Journal of the Royal Statis
 
 
 
-\seealso{\code{\link{BH}}}
+\seealso{\code{\link{BH}},\code{\link{summary.BH}},\code{\link{SGoF}}}
 
 
 
 
 \examples{
 
-data(Hedenfalk)
+
 
 res<-BH(Hedenfalk$x)
 plot(res)  
@@ -45,5 +45,5 @@ plot(res)
 
 \keyword{Benjamini-Hochberg}
 \keyword{FDR}
-
+\keyword{BH}
 \keyword{multitesting}

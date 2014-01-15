@@ -13,13 +13,13 @@
 
 \arguments{
   \item{object}{A BH object.}
-  \item{\dots}{additional arguments affecting the summary produced.}
+  \item{\dots}{Additional arguments affecting the summary produced.}
 }
 
 
 \value{
 
-\item{Rejections }{The number of effects declared by BB-SGoF with automatic k.}
+\item{Rejections }{The number of effects declared by the BH procedure.}
  \item{FDR }{The estimated false discovery rate.}
  \item{Adjusted.pvalues }{Table of adjusted p-values falling under alpha.}
 
@@ -28,8 +28,10 @@
 
 
 \references{
-Benjamini Y, Hochberg Y (1995): Controlling the False Discovery Rate: A
-Practical and Powerful Approach to Multiple Testing. Journal of the Royal Statistical Society Series B (Methodological) 57, 289-300.
+Benjamini Y and Hochberg Y (1995): Controlling the False Discovery Rate: A
+Practical and Powerful Approach to Multiple Testing. \emph{Journal of the Royal Statistical Society Series B (Methodological)} 57, 289--300.
+
+Dalmasso C, Broet P and Moreau T (2005) A simple procedure for estimating the false discovery rate. \emph{Bioinformatics} 21:660--668
 
 }
 
@@ -38,10 +40,10 @@ Practical and Powerful Approach to Multiple Testing. Journal of the Royal Statis
 
 
 
-\seealso{\code{\link{BH}}}
+\seealso{\code{\link{BH}},\code{\link{plot.BH}}}
 
 \examples{
-data(Hedenfalk)
+
 
 res<-BH(Hedenfalk$x)
 summary(res) 
@@ -51,5 +53,5 @@ summary(res)
 
 \keyword{Benjamini-Hochberg}
 \keyword{FDR}
-
+\keyword{BH}
 \keyword{multitesting}

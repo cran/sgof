@@ -1,4 +1,4 @@
-print.SGoF <-
+print.Binomial.SGoF <-
 function(x, ...){
 cat("Call:\n") 
 print(x$call) 
