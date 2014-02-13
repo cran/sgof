@@ -5,7 +5,7 @@
 
 \title{Conservative SGoF multitesting procedure}
 
-\description{Performs Conservative SGoF method (\cite{de Uña Álvarez, 2011}) for multiple hypotheses testing.}
+\description{Performs Conservative SGoF method (\cite{de Uña Álvarez, 2011}) for multiple hypothesis testing.}
 \usage{
 SGoF(u, alpha = 0.05, gamma = 0.05)
 

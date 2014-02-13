@@ -3,7 +3,7 @@
 \alias{sgof-package}
 \alias{sgof}
 \docType{package}
-\title{Multiple hypotheses testing}
+\title{Multiple hypothesis testing}
 \description{
 This package implements six different methods for multitesting problems. 
 The \cite{Benjamini and Hochberg (1995)} false discovery rate controlling procedure and its modification for positive dependence assumptions \cite{Benjamini and Yekutieli (2001)}, 

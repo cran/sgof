@@ -5,7 +5,7 @@
 
 \title{Binomial SGoF multitesting procedure}
 
-\description{Performs the Binomial SGoF method (\cite{Carvajal Rodríguez et al., 2009}) for multiple hypotheses testing.}
+\description{Performs the Binomial SGoF method (\cite{Carvajal Rodríguez et al., 2009}) for multiple hypothesis testing.}
 
 \usage{
 Binomial.SGoF(u, alpha = 0.05, gamma = 0.05)

@@ -341,8 +341,13 @@ ii=unique(c(which(vb1>=tol*median(vb1)),which(vb2>=tol*median(vb2)),which(vb2<=0
 
 if (length(ii)!=0) tlow=exp(low[-ii])/(1+exp(low[-ii]))-gamma else tlow=exp(low)/(1+exp(low))-gamma
 
-effects=pmax(n*tlow,0,na.rm = T)
+effects1=pmax(n*tlow,0,na.rm = T)
 
+effects<-numeric(length(effects1))
+
+for(i in 1:length(effects1)){
+effects[i]<-min(effects1[i], sum(n * ecdf(u)(u) <= effects1[i]))
+}
 
 
 Mini=min(tlow,na.rm = T)

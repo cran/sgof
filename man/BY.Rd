@@ -6,7 +6,7 @@
 
 \title{Benjamini-Yekutieli (BY) multitesting procedure}
 
-\description{Performs the Benjamini-Yekutieli FDR-controlling method for multiple hypotheses testing. }
+\description{Performs the Benjamini-Yekutieli FDR-controlling method for multiple hypothesis testing. }
 
 \usage{
 BY(u, alpha = 0.05)

@@ -4,7 +4,7 @@
 \alias{print.Bayesian.SGoF}
 
 \title{Bayesian SGoF multitesting procedure}
-\description{Performs the Bayesian SGoF method (\cite{Castro Conde and de Uña Álvarez , 2013 13/06}) for multiple hypotheses testing.}
+\description{Performs the Bayesian SGoF method (\cite{Castro Conde and de Uña Álvarez , 2013 13/06}) for multiple hypothesis testing.}
 \usage{
 Bayesian.SGoF(u, alpha = 0.05, gamma = 0.05, P0 = 0.5, a0 = 1, b0 = 1)
 }

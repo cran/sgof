@@ -6,7 +6,7 @@
 
 \title{Benjamini-Hochberg (BH) multitesting procedure}
 
-\description{Performs the Benjamini-Hochberg FDR-controlling method for multiple hypotheses testing. }
+\description{Performs the Benjamini-Hochberg FDR-controlling method for multiple hypothesis testing. }
 
 \usage{
 BH(u, alpha = 0.05)

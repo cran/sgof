@@ -13,5 +13,7 @@ cat("b0=",object$b0,"\n")
 cat("\n")
 res <- list(Rejections=object$Rejections,FDR=object$FDR,Posterior=object$Posterior,s=object$s,s.alpha=object$s.alpha )
 
+
+class(res) <- "summary.Bayesian.SGoF"
 return(res)
 }

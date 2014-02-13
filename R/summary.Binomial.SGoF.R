@@ -12,5 +12,6 @@ if(sum(object$Adjusted.pvalues>object$gamma)==length(object$data)){attributes(ta
 cat("\n")
 res <- list(Rejections=object$Rejections,FDR=object$FDR,Adjusted.pvalues=tabla )
 
+class(res) <- "summary.Binomial.SGoF"
 return(res)
 }
