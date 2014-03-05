@@ -55,6 +55,6 @@ summary(res)
 
 \keyword{htest}
 \keyword{correlation}
-\keyword{multitesting}
+\keyword{multi-testing}
 \keyword{Bayesian.SGoF}
 

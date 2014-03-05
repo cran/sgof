@@ -54,4 +54,4 @@ summary(res)
 \keyword{Benjamini-Hochberg}
 \keyword{FDR}
 \keyword{BH}
-\keyword{multitesting}
+\keyword{multi-testing}

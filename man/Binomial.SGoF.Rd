@@ -3,7 +3,7 @@
 \alias{Binomial.SGoF}
 \alias{print.Binomial.SGoF}
 
-\title{Binomial SGoF multitesting procedure}
+\title{Binomial SGoF multi-testing procedure}
 
 \description{Performs the Binomial SGoF method (\cite{Carvajal Rodríguez et al., 2009}) for multiple hypothesis testing.}
 
@@ -72,7 +72,7 @@ plot(res)   #adjusted p-values
 \keyword{htest}
 
 \keyword{Binomial.SGoF}
-\keyword{multitesting}
+\keyword{multi-testing}
 
 
 

@@ -46,5 +46,5 @@ plot(res)
 \keyword{FDR}
 \keyword{BY}
 
-\keyword{multitesting}
+\keyword{multi-testing}
 \keyword{correlation}

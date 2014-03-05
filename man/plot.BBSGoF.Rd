@@ -49,4 +49,4 @@ plot(res)   #Tarone test, within-block correlation, beta density (for automatic 
 \keyword{correlation}
 \keyword{BBSGoF}
 
-\keyword{multitesting}
+\keyword{multi-testing}

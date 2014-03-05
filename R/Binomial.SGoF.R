@@ -10,7 +10,7 @@ b=seq(0,n)
 
 
 
-Binomial.SGoF=max(min(n*ecdf(u)(gamma)-b[min(which((1-pbinom(b-1,n,gamma))<=alpha))]+1,sum(n*ecdf(u)(u)<=(n*ecdf(u)(gamma)-b[min(which((1-pbinom(b-1,n,gamma))<=alpha))]+1))),0)
+Binomial.SGoF=max(min(n*ecdf(u)(gamma)-b[min(which((1-pbinom(b-1,n,gamma))<=alpha))]+1,sum(as.integer(n*ecdf(u)(u))<=(n*ecdf(u)(gamma)-b[min(which((1-pbinom(b-1,n,gamma))<=alpha))]+1))),0)
 
 
 su<-sort(u)
@@ -29,7 +29,7 @@ N<-pmax(n*ecdf(su)(su)-cuantiles+1,0)
 
 
 
-N1<-sapply(1:n,function(i) N1<-max(which(n*ecdf(su)(su)<=N[i]),0))
+N1<-sapply(1:n,function(i) N1<-max(which(as.integer(n*ecdf(su)(su))<=N[i]),0))
 
 
 

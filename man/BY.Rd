@@ -4,7 +4,7 @@
 \alias{print.BY}
 \alias{Benjamini-Yekutieli}
 
-\title{Benjamini-Yekutieli (BY) multitesting procedure}
+\title{Benjamini-Yekutieli (BY) multi-testing procedure}
 
 \description{Performs the Benjamini-Yekutieli FDR-controlling method for multiple hypothesis testing. }
 
@@ -63,4 +63,4 @@ plot(res)   #adjusted p-values
 
 \keyword{BY}
 \keyword{correlation}
-\keyword{multitesting}
+\keyword{multi-testing}

@@ -4,7 +4,7 @@
 \alias{print.BH}
 \alias{Benjamini-Hochberg}
 
-\title{Benjamini-Hochberg (BH) multitesting procedure}
+\title{Benjamini-Hochberg (BH) multi-testing procedure}
 
 \description{Performs the Benjamini-Hochberg FDR-controlling method for multiple hypothesis testing. }
 
@@ -62,4 +62,4 @@ plot(res)   #adjusted p-values
 \keyword{Benjamini-Hochberg}
 \keyword{FDR}
 
-\keyword{multitesting}
+\keyword{multi-testing}

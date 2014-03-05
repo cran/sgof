@@ -48,5 +48,5 @@ plot(res)
 \keyword{htest}
 
 
-\keyword{multitesting}
+\keyword{multi-testing}
 \keyword{SGoF}

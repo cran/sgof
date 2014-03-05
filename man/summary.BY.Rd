@@ -53,4 +53,4 @@ summary(res)
 \keyword{Benjamini-Yekutieli}
 \keyword{FDR}
 \keyword{BY}
-\keyword{multitesting}
+\keyword{multi-testing}

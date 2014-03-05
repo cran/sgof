@@ -59,5 +59,5 @@ summary(res)   #number of rejected nulls, estimated FDR
 
 \keyword{htest}
 
-\keyword{multitesting}
+\keyword{multi-testing}
 \keyword{Binomial.SGoF}

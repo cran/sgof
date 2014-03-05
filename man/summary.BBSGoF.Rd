@@ -60,4 +60,4 @@ summary(res)    #automatic number of blocks, number of rejected nulls,
 \keyword{correlation}
 \keyword{BBSGoF}
 
-\keyword{multitesting}
+\keyword{multi-testing}

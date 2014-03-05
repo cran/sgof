@@ -3,7 +3,7 @@
 \alias{SGoF}
 \alias{print.SGoF}
 
-\title{Conservative SGoF multitesting procedure}
+\title{Conservative SGoF multi-testing procedure}
 
 \description{Performs Conservative SGoF method (\cite{de Uña Álvarez, 2011}) for multiple hypothesis testing.}
 \usage{
@@ -68,5 +68,5 @@ plot(res)   #adjusted p-values
 \keyword{htest}
 
 
-\keyword{multitesting}
+\keyword{multi-testing}
 \keyword{SGoF}

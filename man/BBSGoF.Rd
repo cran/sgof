@@ -4,7 +4,7 @@
 \alias{BBSGoF}
 \alias{print.BBSGoF}
 
-\title{BBSGoF multitesting procedure.}
+\title{BBSGoF multi-testing procedure.}
 
 \description{
 BB-SGoF (\cite{de Uña-Álvarez, 2012}; \cite{Castro-Conde and de Uña-Álvarez, 2013 13/03}) is an adaptation of SGoF method for possibly dependent tests. It is initially assumed that the provided vector of p-values are correlated
@@ -101,5 +101,5 @@ plot(res)   #Tarone test, within-block correlation, beta density (for automatic 
 \keyword{htest}
 \keyword{correlation}
 \keyword{BBSGoF}
-\keyword{multitesting}
+\keyword{multi-testing}
 

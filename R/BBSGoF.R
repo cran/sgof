@@ -166,13 +166,13 @@ tlow<-(exp(low)/(1+exp(low)))-u
 effects1=floor(pmax(n*tlow,0,na.rm = T))
 effects2<-numeric(n)
 for(i in 1:n){
-effects2[i]<-max(which(n*ecdf(su)(su)<=effects1[i]),0)}
+effects2[i]<-max(which(as.integer(n*ecdf(su)(su))<=effects1[i]),0)}
 effects<-pmin(effects1,effects2)
 
 
 umax2<-which.max(effects)
 au2=rep(1,n)
-out<-outer(effects,n*ecdf(u)(u),">=")               
+out<-outer(effects,as.integer(n*ecdf(u)(u)),">=")               
 ind<-which(sapply(1:n, function(i) ind<-length(effects[out[,i]]))!=0) 
        
 
@@ -346,7 +346,7 @@ effects1=pmax(n*tlow,0,na.rm = T)
 effects<-numeric(length(effects1))
 
 for(i in 1:length(effects1)){
-effects[i]<-min(effects1[i], sum(n * ecdf(u)(u) <= effects1[i]))
+effects[i]<-min(effects1[i], sum(as.integer(n * ecdf(u)(u) )<= effects1[i]))
 }
 
 
@@ -354,11 +354,11 @@ Mini=min(tlow,na.rm = T)
 
 mineffects=floor(max(n*Mini,0)) #effects declared by BB-SGoF based on kN=k^N
 
-mineffects<-min(mineffects,sum(n*ecdf(u)(u)<=mineffects))
+mineffects<-min(mineffects,sum(as.integer(n*ecdf(u)(u))<=mineffects))
 
 
 kN=1+which(tlow.original==Mini)  #number of blocks for BB-SGoF decision
-SGoF=floor(max(min(n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1,sum(n*ecdf(u)(u)<=n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1)),0))
+SGoF=floor(max(min(n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1,sum(as.integer(n*ecdf(u)(u))<=n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1)),0))
 
 su<-sort(u)
 jj<-which(u==1)

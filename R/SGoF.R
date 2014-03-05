@@ -7,7 +7,7 @@ v=as.numeric(u<=gamma)
 n=length(v)
 
 
-SGoF=max(min(floor(n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1),sum(n*ecdf(u)(u)<=n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1)),0)
+SGoF=max(min(floor(n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1),sum(as.integer(n*ecdf(u)(u))<=n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha)+1)),0)
 
 su<-sort(u)
 jj<-which(u==1)
@@ -19,7 +19,7 @@ if(SGoF==0){FDR_S<-0}else{FDR_S<-round((pi0*su[SGoF])/(ecdf(u)(su[SGoF])),4)}
 Nu1=pmax(n*(ecdf(su)(su)-su)-sqrt(n*ecdf(su)(su)*(1-ecdf(su)(su)))*qnorm(1-su)+1,0)
 
 
-Nu2<-sapply(1:n,function(i) Nu2<-max(which(n*ecdf(su)(su)<=Nu1[i]),0))
+Nu2<-sapply(1:n,function(i) Nu2<-max(which(as.integer(n*ecdf(su)(su))<=Nu1[i]),0))
 
 Nu<-pmin(Nu1,Nu2)
 

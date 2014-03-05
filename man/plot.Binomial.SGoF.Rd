@@ -43,5 +43,5 @@ plot(res)
 
 \keyword{htest}
 
-\keyword{multitesting}
+\keyword{multi-testing}
 \keyword{Binomial.SGoF}

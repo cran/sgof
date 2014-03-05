@@ -5,7 +5,7 @@
 \docType{package}
 \title{Multiple hypothesis testing}
 \description{
-This package implements six different methods for multitesting problems. 
+This package implements six different methods for multi-testing problems. 
 The \cite{Benjamini and Hochberg (1995)} false discovery rate controlling procedure and its modification for positive dependence assumptions \cite{Benjamini and Yekutieli (2001)}, 
 the method called Binomial SGoF  proposed in \cite{Carvajal Rodríguez et al. (2009)} and its conservative and bayesian versions called Conservative SGoF (\cite{de Uña Álvarez, 2011}) and Bayesian SGoF (\cite{Castro Conde  and de Uña Álvarez, 2013 13/06}), respectively,
 and the BB-SGoF prodedure (Beta-Binomial SGoF, \cite{de Uña Álvarez, 2012}) which is an adaptation of SGoF method for possibly correlated tests. Number of rejections, FDR and adjusted p-values are computed among other things.
@@ -15,8 +15,8 @@ and the BB-SGoF prodedure (Beta-Binomial SGoF, \cite{de Uña Álvarez, 2012}) wh
 \tabular{ll}{
 Package: \tab sgof\cr
 Type: \tab Package\cr
-Version: \tab 2.0\cr
-Date: \tab 2014-01-15\cr
+Version: \tab 2.0.2\cr
+Date: \tab 2014-03-05\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
@@ -62,7 +62,7 @@ de Uña Álvarez J (2012). The Beta-Binomial SGoF method for multiple dependent 
 \keyword{FDR}
 \keyword{BH}
 \keyword{BY}
-\keyword{multitesting}
+\keyword{multi-testing}
 \keyword{Binomial.SGoF}
 \keyword{Bayesian.SGoF}
 \keyword{Hedenfalk}

@@ -30,10 +30,10 @@ PHoxx[j,]=1/(1+((1-P0)/P0)*BBxx[j,])
 ind<-sapply(1:(n+1), function(j) ind<-which.min(PHoxx[j,]))
 lowb<-sapply(1:(n+1), function(j) lowb<-PHoxx[j,ind[j]])
 
-salpha=max(which(lowb>0.05)) 
+if(sum(lowb > 0.05)==0){salpha=0}else{salpha = max(which(lowb > 0.05))}
 
 
-Bayesian.SGoF=max(min( floor((ss>=salpha)*n*(qbeta(alpha,a0+ss,b0+n-ss)-gamma)+1),sum(n*ecdf(u)(u)<=(ss>=salpha)*n*(qbeta(alpha,a0+ss,b0+n-ss)-gamma)+1) ) ,0)
+Bayesian.SGoF = max(min(floor((ss >= salpha) *( n * (qbeta(alpha,a0 + ss, b0 + n - ss) - gamma) + 1)), sum(as.integer(n *ecdf(u)(u)) <= (ss >= salpha) *( n * (qbeta(alpha,a0 + ss, b0 + n - ss) - gamma) + 1))), 0)
 
 
 
