@@ -70,8 +70,7 @@ A list containing the following values:
 
 \references{
 
-Castro Conde I and de Uña Álvarez J (2013). Power, FDR and conservativeness of BB-SGoF method for multiple dependent tests: a simulation study.  \emph{Discussion Papers in Statistics and Operation Research}. Report 13/03. Statistics and OR Department. University of Vigo. 
-\url{http://webs.uvigo.es/depc05/reports/13_03.pdf}
+Castro Conde I and de Uña Álvarez J (2013). Power, FDR and conservativeness of BB-SGoF method for multiple dependent tests: a simulation study.  \emph{Discussion Papers in Statistics and Operation Research}. Report 13/03. Statistics and OR Department. University of Vigo. Under revision in Computational Statistics.
 
 Dalmasso C, Broet P and Moreau T (2005). A simple procedure for estimating the false discovery rate. \emph{Bioinformatics} 21:660--668
 

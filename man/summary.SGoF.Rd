@@ -29,7 +29,7 @@
 
 \references{
 
-Castro Conde I and de Uña Álvarez J (2013). Adjusted p-values for SGoF multitesting method.  \emph{Discussion Papers in Statistics and Operation Research}. Report 13/05. Statistics and OR Department. University of Vigo. \url{https://webs.uvigo.es/depc05/reports/13_05.pdf}
+Castro Conde I and de Uña Álvarez J (2013). Adjusted p-values for SGoF multiple test procedure.  \emph{Biometrical Journal: in press}. DOI: 10.1002/bimj.201300238
 
 Dalmasso C, Broet P and Moreau T (2005) A simple procedure for estimating the false discovery rate. \emph{Bioinformatics} 21:660--668
 

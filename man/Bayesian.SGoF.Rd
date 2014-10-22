@@ -48,7 +48,8 @@ A list containing the following values:
 }
 \references{
 
-Castro Conde I and de Uña Álvarez J (2013). SGoF multitesting method under the Bayesian paradigm.  \emph{Discussion Papers in Statistics and Operation Research}. Report 13/06. Statistics and OR Department. University of Vigo. \url{https://webs.uvigo.es/depc05/reports/13_06.pdf}
+Castro Conde I and de Uña Álvarez J (2013). SGoF multitesting method under the Bayesian paradigm. \emph{Discussion Papers in Statistics and Operation Research}. Report 13/06. Statistics and OR Department. University of Vigo. Under
+revision in Journal of Statistical Computation and Simulation.
 
 Dalmasso C, Broet P and Moreau T (2005) A simple procedure for estimating the false discovery rate. \emph{Bioinformatics} 21:660--668
 
