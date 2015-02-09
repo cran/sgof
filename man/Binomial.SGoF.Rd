@@ -3,7 +3,7 @@
 \alias{Binomial.SGoF}
 \alias{print.Binomial.SGoF}
 
-\title{Binomial SGoF multi-testing procedure}
+\title{Binomial SGoF multiple testing procedure}
 
 \description{Performs the Binomial SGoF method (\cite{Carvajal Rodríguez et al., 2009}) for multiple hypothesis testing.}
 
@@ -27,7 +27,7 @@ Binomial SGoF starts by counting the amount of p-values below \code{gamma}. This
 Binomial SGoF procedure weakly controls the family-wise error rate (FWER) and the false discovery rate (FDR) at level \code{alpha}. That is, the probability of committing one or more than one type I errors along the multiple tests is bounded by \code{alpha} when all the null hypotheses are true. SGoF does not control for FWER nor FDR in the presence of effects. It has been quoted that Binomial SGoF provides a good balance between FDR and power, particularly when the number of tests is large, and the effect level is weak to moderate. It is also known that the number of effects declared by Binomial SGoF is a 100(1-\code{alpha})\% lower bound for the true number of existing effects with p-value below the initial threshold \code{gamma} so, interestingly, at probability 1-\code{alpha}, the number of false discoveries of SGoF does not exceed the number of false non-discoveries (\cite{de Uña Álvarez, 2012}).
 Typically, the choice \code{alpha}=\code{gamma} will be used; this common value will be set as one of the usual significance levels (0.001, 0.01, 0.05, 0.1). Note however that \code{alpha} and \code{gamma} have different roles.
 The FDR is estimated by the simple method proposed by: \cite{Dalmasso, Broet, Moreau (2005)}, by taking n=1 in their formula.
-The adjusted p-value of a given p-value pi is defined as the smallest alpha0 for which the null hypothesis attached to pi is rejected by SGoF with \code{alpha}=\code{gamma}=alpha0. Actually, Binomial.SGoF function provides  these adjusted p-values by restricting alpha0 to the set of original p-values. \cite{Castro-Conde and de Uña-Álvarez  (2013 13/05)}   proved that this restriction does not change the adjusted p-values, while reducing the computational time.
+The adjusted p-value of a given p-value pi is defined as the smallest alpha0 for which the null hypothesis attached to pi is rejected by SGoF with \code{alpha}=\code{gamma}=alpha0. Actually, Binomial.SGoF function provides  these adjusted p-values by restricting alpha0 to the set of original p-values. \cite{Castro-Conde and de Uña-Álvarez  (2015)}   proved that this restriction does not change the adjusted p-values, while reducing the computational time.
 }
 
 \value{
@@ -45,7 +45,7 @@ Carvajal Rodríguez A, de Uña Álvarez J and Rolán Álvarez E (2009). A new
 multitest correction (SGoF) that increases its statistical power when increasing the number of tests. \emph{BMC Bioinformatics} 10:209.
 
 
-Castro Conde I and de Uña Álvarez J (2013). Adjusted p-values for SGoF multiple test procedure.  \emph{Biometrical Journal: in press}. DOI: 10.1002/bimj.201300238
+Castro Conde I and de Uña Álvarez J (2015). Adjusted p-values for SGoF multiple test procedure.  \emph{Biometrical Journal},  57(1): 108-122. DOI: 10.1002/bimj.201300238
 
 Dalmasso C, Broet P and Moreau T (2005) A simple procedure for estimating the false discovery rate. \emph{Bioinformatics} 21:660--668
 

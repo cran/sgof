@@ -4,7 +4,7 @@
 \alias{print.BY}
 \alias{Benjamini-Yekutieli}
 
-\title{Benjamini-Yekutieli (BY) multi-testing procedure}
+\title{Benjamini-Yekutieli (BY) multiple testing procedure}
 
 \description{Performs the Benjamini-Yekutieli FDR-controlling method for multiple hypothesis testing. }
 
@@ -18,7 +18,7 @@ BY(u, alpha = 0.05)
   \item{alpha }{ Numeric value. The significance level of the test.}
 }
 \details{
-The function BY allows for the application of the \cite{Benjamini and Yekutieli (2001)} false discovery rate controlling procedure under positive dependence assumptions.
+The function BY allows for the application of the \cite{Benjamini and Yekutieli (2001)} false discovery rate controlling procedure under dependence assumptions.
 The false discovery rate is estimated by the simple method proposed by: \cite{Dalmasso, Broet, Moreau (2005)}, by taking n=1 in their formula.
 }
 

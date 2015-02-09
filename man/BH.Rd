@@ -4,7 +4,7 @@
 \alias{print.BH}
 \alias{Benjamini-Hochberg}
 
-\title{Benjamini-Hochberg (BH) multi-testing procedure}
+\title{Benjamini-Hochberg (BH) multiple testing procedure}
 
 \description{Performs the Benjamini-Hochberg FDR-controlling method for multiple hypothesis testing. }
 

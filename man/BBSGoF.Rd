@@ -4,10 +4,10 @@
 \alias{BBSGoF}
 \alias{print.BBSGoF}
 
-\title{BBSGoF multi-testing procedure.}
+\title{BBSGoF multiple testing procedure.}
 
 \description{
-BB-SGoF (\cite{de Uña-Álvarez, 2012}; \cite{Castro-Conde and de Uña-Álvarez, 2013 13/03}) is an adaptation of SGoF method for possibly dependent tests. It is initially assumed that the provided vector of p-values are correlated
+BB-SGoF (\cite{de Uña-Álvarez, 2012}; \cite{Castro-Conde and de Uña-Álvarez, in press}) is an adaptation of SGoF method for possibly dependent tests. It is initially assumed that the provided vector of p-values are correlated
  in k blocks of equal size (following the given sequence), where k is unknown.
 }
 
@@ -30,7 +30,7 @@ BBSGoF(u, alpha = 0.05, gamma = 0.05, kmin = 2, kmax = min(length(u)\%/\%10, 100
 }
 
 \details{
-BB-SGoF (\cite{de Uña-Álvarez, 2012}; \cite{Castro-Conde and de Uña-Álvarez, 2013 13/03}) is an adaptation of SGoF method for possibly dependent tests. It is initially assumed that the provided vector of p-values are correlated in k blocks of equal size (following the given sequence), where k is unknown. Inference on the number of existing effects is performed following SGoF principles, but replacing the binomial distribution for a beta-binomial in the metatest. The beta-binomial distribution is approximated by the normal distribution; therefore, some caution is needed when the number of tests is small. It is implicitly assumed that the probability p for a p-value to fall below \code{gamma} is random, following a beta distribution, Beta(a,b); as a consequence, the number of p-values below gamma in each block generates a random sample from a Betabinomial(p,rho) model, where p=E(p)=a/(a+b) and rho=Var(p)/p(1-p)=1/(a+b+1) are respectively the mean of p and the within-block correlation between two indicators of type I(pi<\code{gamma}), I(pj<\code{gamma}). The parameters are estimated by maximum likelihood, and the asymptotic normal distribution of the estimated parameters is used to perform the inferences (so caution is needed when the number of p-values is small). Since k is unknown, the method is fitted for each integer ranging from k=\code{kmin} to k=\code{kmax}, and results for each k are saved. Automatic (conservative) choice of k is also performed; the automatic k is the value of k leading to the smallest amount of declared effects (by effects it is meant null hypotheses to be rejected).
+BB-SGoF (\cite{de Uña-Álvarez, 2012}; \cite{Castro-Conde and de Uña-Álvarez, in press}) is an adaptation of SGoF method for possibly dependent tests. It is initially assumed that the provided vector of p-values are correlated in k blocks of equal size (following the given sequence), where k is unknown. Inference on the number of existing effects is performed following SGoF principles, but replacing the binomial distribution for a beta-binomial in the metatest. The beta-binomial distribution is approximated by the normal distribution; therefore, some caution is needed when the number of tests is small. It is implicitly assumed that the probability p for a p-value to fall below \code{gamma} is random, following a beta distribution, Beta(a,b); as a consequence, the number of p-values below gamma in each block generates a random sample from a Betabinomial(p,rho) model, where p=E(p)=a/(a+b) and rho=Var(p)/p(1-p)=1/(a+b+1) are respectively the mean of p and the within-block correlation between two indicators of type I(pi<\code{gamma}), I(pj<\code{gamma}). The parameters are estimated by maximum likelihood, and the asymptotic normal distribution of the estimated parameters is used to perform the inferences (so caution is needed when the number of p-values is small). Since k is unknown, the method is fitted for each integer ranging from k=\code{kmin} to k=\code{kmax}, and results for each k are saved. Automatic (conservative) choice of k is also performed; the automatic k is the value of k leading to the smallest amount of declared effects (by effects it is meant null hypotheses to be rejected).
 The excess of observed significant cases in the beta-binomial metatest are reported as number of existing effects N. Finally, the effects are identified by considering the smallest N p-values.
 BB-SGoF procedure weakly controls the family-wise error rate (FWER) and the false discovery rate (FDR) at level \code{alpha}. That is, the probability of commiting one or more than one type I errors along the multiple tests is bounded by \code{alpha} when all the null hypotheses are true. SGoF does not control for FWER nor FDR in the presence of effects. It has been quoted that BB-SGoF provides a good balance between FDR and power, particularly when the number of tests is large, and the effect level is weak to moderate. It is also known that the number of effects declared by BB-SGoF is a 100(1-\code{alpha})\% lower bound for the true number of existing effects with p-value below the initial threshold \code{gamma} so, interestingly, at probability 1-\code{alpha}, the number of false discoveries of BB-SGoF does not exceed the number of false non-discoveries (\cite{de Uña-Álvarez, 2012}).
 As for SGoF method, typically the choice \code{alpha}=\code{gamma} will be used for BB-SGoF; this common value will be set as one of the usual significance levels (0.001, 0.01, 0.05, 0.1). Note however that \code{alpha} and \code{gamma} have different roles.
@@ -70,7 +70,8 @@ A list containing the following values:
 
 \references{
 
-Castro Conde I and de Uña Álvarez J (2013). Power, FDR and conservativeness of BB-SGoF method for multiple dependent tests: a simulation study.  \emph{Discussion Papers in Statistics and Operation Research}. Report 13/03. Statistics and OR Department. University of Vigo. Under revision in Computational Statistics.
+Castro Conde I and de Uña Álvarez J. Power, FDR and conservativeness of BB-SGoF
+method. Computational Statistics in press; DOI:10.1007/s00180-015-0553-2.
 
 Dalmasso C, Broet P and Moreau T (2005). A simple procedure for estimating the false discovery rate. \emph{Bioinformatics} 21:660--668
 

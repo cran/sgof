@@ -39,7 +39,7 @@ return(c(list(Rejections=SGoF,FDR=FDR_S,Adjusted.pvalues=a.p)))
 
 
 
-if(missing(u)){stop("data argument is requiered")}
+if(missing(u)){stop("data argument is required")}
 u<-as.vector(u)
 res<-sgof(u,alpha,gamma)
 res$data<-sort(u)

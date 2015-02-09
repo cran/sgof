@@ -49,7 +49,7 @@ return(c(list(Rejections=Binomial.SGoF,FDR=FDR_BS,Adjusted.pvalues=auu)))
 
 
 
-if(missing(u)){stop("data argument is requiered")}
+if(missing(u)){stop("data argument is required")}
 u<-as.vector(u)
 res<-binomial.sgof(u,alpha,gamma)
 res$data<-sort(u)

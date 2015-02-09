@@ -27,7 +27,7 @@ ad.p[i]<-min(sort(u)[i]*(n/i),ad.p[i+1])
 return(c(list(Rejections=bh,FDR=FDR_BH,Adjusted.pvalues=sort(ad.p))))
 }
 
-if(missing(u)){stop("data argument is requiered")}
+if(missing(u)){stop("data argument is required")}
 
 
 

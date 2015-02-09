@@ -32,7 +32,7 @@ Carvajal Rodríguez A, de Uña Álvarez J and Rolán Álvarez E (2009). A new
 multitest correction (Binomial.SGoF) that increases its statistical power when increasing the number of tests. \emph{BMC Bioinformatics} 10:209.
 
 
-Castro Conde I and de Uña Álvarez J (2013). Adjusted p-values for SGoF multiple test procedure.  \emph{Biometrical Journal: in press}. DOI: 10.1002/bimj.201300238
+Castro Conde I and de Uña Álvarez J (2015). Adjusted p-values for SGoF multiple test procedure.  \emph{Biometrical Journal}; 57(1): 108-122. DOI: 10.1002/bimj.201300238
 
 Dalmasso C, Broet P and Moreau T (2005) A simple procedure for estimating the false discovery rate. \emph{Bioinformatics} 21:660--668
 

@@ -59,7 +59,7 @@ return(c(list(Rejections=Bayesian.SGoF,FDR=FDR_BS,Posterior=PHo,s=ss,s.alpha=sal
 
 
 
-if(missing(u)){stop("data argument is requiered")}
+if(missing(u)){stop("data argument is required")}
 u<-as.vector(u)
 res<-bayesian.sgof(u,alpha,gamma,P0,a0,b0)
 res$data<-sort(u)

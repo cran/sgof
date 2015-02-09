@@ -2,9 +2,9 @@ BBSGoF<-function (u, alpha = 0.05, gamma = 0.05, kmin = 2, kmax = min(length(u)%
 {
 
     if (missing(blocks) & adjusted.pvalues == T) {
-        stop("blocks argument is required to cumpute the Adjusted p-values")  }
+        stop("blocks argument is required to compute the adjusted p-values")  }
    
-    if (missing(u)) { stop("data argument is requiered") }
+    if (missing(u)) { stop("data argument is required") }
     
     if (kmin > kmax) {
         stop("kmax should be larger than kmin") }
@@ -439,6 +439,11 @@ BBSGoF<-function (u, alpha = 0.05, gamma = 0.05, kmin = 2, kmax = min(length(u)%
         tlow.original <- exp(low)/(1 + exp(low)) - gamma
         
         ii=unique(c( which(vb2 <= 0), which(vb1 <= 0)))
+
+
+if((kmax-kmin+1)==length(ii)){stop("All the blocks in the grid have been removed because they provided negative variances: change kmin and/or kmax")}
+
+
 
         if (length(ii) != 0) 
             tlow = exp(low[-ii])/(1 + exp(low[-ii])) - gamma
