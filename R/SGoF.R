@@ -11,7 +11,7 @@ SGoF=max(min(floor(n*(mean(v)-gamma)-n*sqrt(mean(v)*(1-mean(v))/n)*qnorm(1-alpha
 
 su<-sort(u)
 jj<-which(u==1)
-if(length(jj)!=0) pi0<-(-1/n)*sum(log(1-u[-jj])) else pi0<-(-1/n)*sum(log(1-u))
+if(length(jj)!=0) pi0<-1 else pi0<-min((-1/n)*sum(log(1-u)),1)
 
 if(SGoF==0){FDR_S<-0}else{FDR_S<-round((pi0*su[SGoF])/(ecdf(u)(su[SGoF])),4)}
 
@@ -31,7 +31,7 @@ Nmax=max(Nu,na.rm=T)
 a.p=rep(1,n)  
 for (i in 1:Nmax) {a.p[i]=min(su[as.integer(n*ecdf(su)(su[i]))<=Nu],na.rm=T)}
 
-return(c(list(Rejections=SGoF,FDR=FDR_S,Adjusted.pvalues=a.p)))
+return(c(list(Rejections=SGoF,FDR=min(FDR_S,1),Adjusted.pvalues=a.p)))
 }
 
 

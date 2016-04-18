@@ -57,7 +57,8 @@ A list containing the following values:
 Carvajal Rodríguez A, de Uña Álvarez J and Rolán Álvarez E (2009). A new
 multitest correction (SGoF) that increases its statistical power when increasing the number of tests. \emph{BMC Bioinformatics} 10:209.
 
-Castro Conde I, Döhler S and de Uña Álvarez J (2014). An extended SGoF multiple testing method for discrete data. Paper in progress.
+
+Castro Conde I, Döhler S and de Uña Álvarez J (2015). An extended sequential goodness-of-fit multiple testing method for discrete data. \emph{Statistical Methods in Medical Research}, doi: 10.1177/0962280215597580.
 
 
 de Uña Álvarez J (2011). On the statistical properties of SGoF multitesting method. 

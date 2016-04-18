@@ -19,7 +19,7 @@
 \references{
 
 Castro Conde I and de Uña Álvarez J (2015). Adjusted p-values for SGoF multiple test procedure.
-Biometrical Journal 2015; 57(1): 108-122. DOI:DOI:10.1002/bimj.201300238.
+\emph{Biometrical Journal}; 57(1): 108-122. DOI:DOI:10.1002/bimj.201300238.
 
 
 de Uña Álvarez J (2011). On the statistical properties of SGoF multitesting method. \emph{Statistical Applications in Genetics and Molecular Biology}, Vol. 10, Iss. 1, Article 18.

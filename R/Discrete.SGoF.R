@@ -72,7 +72,7 @@ Discrete.SGoF = min(rejections.disc, sum(as.integer(n *ecdf(u)(u)) <= rejections
         
 su <- sort(u)
 jj <- which(u == 1)
-if (length(jj) != 0) pi0 <- (-1/n) * sum(log(1 - u[-jj])) else pi0 <- (-1/n) * sum(log(1 - u))
+if (length(jj) != 0) pi0 <- 1 else pi0 <- min((-1/n) * sum(log(1 - u)),1)
 
 if (Discrete.SGoF == 0) {
 FDR_DS <- 0
@@ -83,7 +83,7 @@ FDR_DS <-round(sort(robust.fdr(su, sides=Sides, p2 = 1 - su, discrete=Discrete ,
 
 
 
-return(c(list(Rejections = Discrete.SGoF, FDR = FDR_DS)))
+return(c(list(Rejections = Discrete.SGoF, FDR = min(FDR_DS,1))))
 }
 
 n=length(u)

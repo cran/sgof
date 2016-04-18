@@ -15,8 +15,8 @@ and the BB-SGoF  (Beta-Binomial SGoF, \cite{de Uña Álvarez, 2012}) and Discret
 \tabular{ll}{
 Package: \tab sgof\cr
 Type: \tab Package\cr
-Version: \tab 2.2\cr
-Date: \tab 2015-02-09\cr
+Version: \tab 2.3\cr
+Date: \tab 2016-04-18\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
@@ -40,18 +40,20 @@ Carvajal Rodríguez A, de Uña Álvarez J and Rolán Álvarez E (2009). A new
 multitest correction (SGoF) that increases its statistical power when increasing the number of tests. \emph{BMC Bioinformatics} 10:209.
 
 
-Castro Conde I and de Uña Álvarez J (in press). Power, FDR and conservativeness of BB-SGoF method. Computational Statistics; DOI:10.1007/s00180-015-0553-2.
+
+Castro Conde I and de Uña Álvarez J. Power, FDR and conservativeness of BB-SGoF
+method. \emph{Computational Statistics}; Volume 30, Issue 4, pp 1143-1161 DOI: 10.1007/s00180-015-0553-2.
+
 
 Castro Conde I and de Uña Álvarez J (2015). Adjusted p-values for SGoF multiple test procedure.  \emph{Biometrical Journal}; 57(1): 108-122. DOI: 10.1002/bimj.201300238
 
 
-Castro Conde I, Döhler S and de Uña Álvarez J (2014). An extended SGoF multiple testing method for discrete data. Paper in progress.
+Castro Conde I, Döhler S and de Uña Álvarez J (2015). An extended sequential goodness-of-fit multiple testing method for discrete data. \emph{Statistical Methods in Medical Research}. doi: 10.1177/0962280215597580.
 
-Castro Conde I and de Uña Álvarez J (2014). sgof: An R package for multiple testing problems. The
-R Journal; Vol. 6/2 December: 96-113.
+Castro Conde I and de Uña Álvarez J (2014). sgof: An R package for multiple testing problems. \emph{The
+R Journal}; Vol. 6/2 December: 96-113.
 
-Castro Conde I and de Uña Álvarez J (2013). SGoF multitesting method under the Bayesian paradigm. \emph{Discussion Papers in Statistics and Operation Research}. Report 13/06. Statistics and OR Department. University of Vigo. Under
-revision in Journal of Statistical Computation and Simulation.
+Castro Conde I and de Uña Álvarez J (2013). SGoF multitesting method under the Bayesian paradigm. \emph{Discussion Papers in Statistics and Operation Research}. Report 13/06. Statistics and OR Department. University of Vigo. 
 
 
 Dalmasso C, Broet P and Moreau T (2005). A simple procedure for estimating the false discovery rate. \emph{Bioinformatics} 21:660--668

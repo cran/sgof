@@ -71,7 +71,7 @@ A list containing the following values:
 \references{
 
 Castro Conde I and de Uña Álvarez J. Power, FDR and conservativeness of BB-SGoF
-method. Computational Statistics in press; DOI:10.1007/s00180-015-0553-2.
+method. \emph{Computational Statistics}; Volume 30, Issue 4, pp 1143-1161 DOI: 10.1007/s00180-015-0553-2.
 
 Dalmasso C, Broet P and Moreau T (2005). A simple procedure for estimating the false discovery rate. \emph{Bioinformatics} 21:660--668
 

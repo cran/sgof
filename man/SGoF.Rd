@@ -39,7 +39,7 @@ A list containing the following values:
  \item{call }{The matched call.}
 }
 \references{
-Castro Conde I and de Uña Álvarez J (2015). Adjusted p-values for SGoF multiple test procedure.   \emph{Biometrical Journal}; 57(1): 108-122. DOI:DOI:10.1002/bimj.201300238.DOI: 10.1002/bimj.201300238
+Castro Conde I and de Uña Álvarez J (2015). Adjusted p-values for SGoF multiple test procedure.   \emph{Biometrical Journal}; 57(1): 108-122. DOI:10.1002/bimj.201300238.
 
 
 Dalmasso C, Broet P and Moreau T (2005). A simple procedure for estimating the false discovery rate. 

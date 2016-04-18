@@ -467,8 +467,8 @@ if((kmax-kmin+1)==length(ii)){stop("All the blocks in the grid have been removed
         su <- sort(u)
         jj <- which(u == 1)
         if (length(jj) != 0) 
-            pi0 <- (-1/n) * sum(log(1 - u[-jj]))
-        else pi0 <- (-1/n) * sum(log(1 - u))
+            pi0 <- 1
+        else pi0 <- min((-1/n) * sum(log(1 - u)),1)
         if (mineffects == 0) {
             FDR_BB <- 0
         }
@@ -512,7 +512,7 @@ if (length(ii) == 0)
 
 
         if (adjusted.pvalues == TRUE) {
-            return(c(list(Rejections = mineffects, FDR = FDR_BB, 
+            return(c(list(Rejections = mineffects, FDR = min(FDR_BB,1), 
                 Adjusted.pvalues = BBSGoF.ap(u, blocks), effects = floor(effects), 
                 SGoF = SGoF, automatic.blocks = kN, deleted.blocks = deleted.blocks, 
                 n.blocks = n.blocks, p = prob[kN - 1], cor = cor, 
@@ -523,7 +523,7 @@ if (length(ii) == 0)
                   jmin]), 4), round(sqrt(varo[kN - jmin]), 4)))))
         }
         else {
-            return(c(list(Rejections = mineffects, FDR = FDR_BB, 
+            return(c(list(Rejections = mineffects, FDR = min(FDR_BB,1), 
                 effects = floor(effects), SGoF = SGoF, automatic.blocks = kN, 
                 deleted.blocks = deleted.blocks, n.blocks = n.blocks, 
                 p = prob[kN - 1], cor = cor, Tarone.pvalues = Tarone.pvalues, 

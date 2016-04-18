@@ -11,7 +11,7 @@ by=max(c(r[u<=(r/(n*q))*alpha],0),na.rm = T)
 
 su<-sort(u)
 jj<-which(u==1)
-if(length(jj)!=0) pi0<-(-1/n)*sum(log(1-u[-jj])) else pi0<-(-1/n)*sum(log(1-u))
+if(length(jj)!=0) pi0<-1 else pi0<-min((-1/n)*sum(log(1-u)),1)
 
 if(by==0){FDR_BY<-0}else{FDR_BY<-round((pi0*su[by])/(ecdf(u)(su[by])),4)}
 
@@ -24,7 +24,7 @@ ad.p[i]<-min(sort(u)[i]*q*n/i,ad.p[i+1])
 }
 
 
-return(c(list(Rejections=by,FDR=FDR_BY,Adjusted.pvalues=sort(ad.p))))
+return(c(list(Rejections=by,FDR=min(FDR_BY,1),Adjusted.pvalues=sort(ad.p))))
 }
 
 if(missing(u)){stop("data argument is required")}

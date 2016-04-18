@@ -47,12 +47,12 @@ PHo=round(1/(1+BB),5)
 
 su<-sort(u)
 jj<-which(u==1)
-if(length(jj)!=0) pi0<-(-1/n)*sum(log(1-u[-jj])) else pi0<-(-1/n)*sum(log(1-u))
+if(length(jj)!=0) pi0<-1 else pi0<-min((-1/n)*sum(log(1-u)),1)
 
 if(Bayesian.SGoF==0){FDR_BS<-0}else{FDR_BS<-round((pi0*su[Bayesian.SGoF])/(ecdf(u)(su[Bayesian.SGoF])),4)}
 
 
-return(c(list(Rejections=Bayesian.SGoF,FDR=FDR_BS,Posterior=PHo,s=ss,s.alpha=salpha)))
+return(c(list(Rejections=Bayesian.SGoF,FDR=min(FDR_BS,1),Posterior=PHo,s=ss,s.alpha=salpha)))
 }
 
 
