@@ -66,11 +66,10 @@ de Uña Álvarez J (2012). The Beta-Binomial SGoF method for multiple dependent 
 
 
 	
-Hong Y. (2013a). On computing the distribution functions for the Poisson binomial
+Hong Y. (2013). On computing the distribution functions for the Poisson binomial
 distribution. \emph{Computational Statistics and Data Analysis} 59, 41-51.
 
-Hong Y. (2013b). poibin: The Poisson binomial distribution. R package version 1.2
-
+Hong Y. (2019). poibin: The Poisson Binomial Distribution. R package version 1.4
 
 Pounds, S. and C. Cheng (2006). Robust estimation of the false discovery rate.
 \emph{Bioinformatics} 22 (16), 1979-1987.
