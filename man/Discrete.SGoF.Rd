@@ -5,7 +5,7 @@
 
 \title{Discrete SGoF multiple testing procedure}
 
-\description{Performs the Discrete SGoF method (\cite{Castro-Conde, Döhler et al., 2014}) for multiple hypothesis testing.}
+\description{Performs the Discrete SGoF method (\cite{Castro-Conde, Döhler et al., 2015}) for multiple hypothesis testing.}
 
 \usage{
 Discrete.SGoF(u,pCDFlist=NA, K=NA, alpha = 0.05, gamma = 0.05, method=NA, 
@@ -30,7 +30,7 @@ Discrete.SGoF(u,pCDFlist=NA, K=NA, alpha = 0.05, gamma = 0.05, method=NA,
  
 \details{
 Discrete SGoF is an extension of Binomial SGoF, based on the generalized or Poisson binomial distribution (Hong, 2013),  which takes into account the discreteness of the p-values. If all the tests are continuous Discrete SGoF reduces to Binomial SGoF method. 
-In particular, if the p-values are continuous, the number of rejections given by Discrete.SGoF will be the number of effects declared by Binomial SGoF. For computing the Poisson Binomial quantile the ppoibin function is used. The code of this function has been extracted from the poibin package developed by Hong Y.(Hong, 2019). The exact method ("DFT-CF") and the "RNA" approximation are used by default to compute the quantile depending on whether the number of tests is smaller than 2000  or not, respectively (see Hong 2013 for more information). However, the user can specified which of the two methods to use.
+In particular, if the p-values are continuous, the number of rejections given by Discrete.SGoF will be the number of effects declared by Binomial SGoF.  For computing the Poisson Binomial quantile, the \code{poibin} package (Hong, 2019) is used. The exact method ("DFT-CF") and the "RNA" approximation are used by default to compute the quantile depending on whether the number of tests is smaller than 2000  or not, respectively (see Hong 2013a for more information). However, the user can specified which of the two methods to use.
 Discrete SGoF works the same like Binomial SGoF but it uses the quantiles of the generalized binomial distribution, as mentioned, instead of the binomial quantiles.
 Discrete SGoF maintains the theoretical properties of Binomial SGoF, e.g. weak control of FDR(FWER) and increasing power when the number of tests increases (de Uña Álvarez, 2011).
 The FDR is estimated by using the method proposed by: \cite{Pounds and Cheng (2006)} using the \code{robust.fdr} function provided by the authors.
@@ -65,7 +65,7 @@ de Uña Álvarez J (2011). On the statistical properties of SGoF multitesting me
 \emph{Statistical Applications in Genetics and Molecular Biology}, Vol. 10, Iss. 1, Article 18.
 
 
- Heller R,   Gur  H and  Yaacoby S. (2012). discreteMTP: Multiple testing procedures for discrete test statistics.
+Heller R,   Gur  H and  Yaacoby S. (2012). discreteMTP: Multiple testing procedures for discrete test statistics.
  R package version 0.1-2
 
 	
@@ -73,6 +73,7 @@ Hong Y. (2013). On computing the distribution functions for the Poisson binomial
 distribution. \emph{Computational Statistics and Data Analysis} 59, 41-51.
 
 Hong Y. (2019). poibin: The Poisson Binomial Distribution. R package version 1.4
+
 
 Pounds, S. and C. Cheng (2006). Robust estimation of the false discovery rate.
 \emph{Bioinformatics} 22 (16), 1979-1987.

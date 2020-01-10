@@ -1,5 +1,6 @@
 exportPattern("^[[:alpha:]]+")
 import(stats)
+import(poibin)
 importFrom("graphics", "abline", "par", "plot", "rug")
 S3method("print", "BH")
 S3method("print", "SGoF")

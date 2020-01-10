@@ -57,70 +57,7 @@ crit.value.disc<-numeric(n)
 
 b=seq(0,n)
 
-ppoibin<-function (kk, pp, method = "DFT-CF", wts = NULL){
-  if (any(pp < 0) | any(pp > 1)) {
-    stop("invalid values in pp.")
-  }
-  if (is.null(wts)) {
-    wts = rep(1, length(pp))
-  }
-  switch(method, `DFT-CF` = {
-    mm = length(kk)
-    res = double(mm)
-    npp = length(pp)
-    n = sum(wts)
-    avec = double(n + 1)
-    bvec = double(n + 1)
-    funcate = 1
-    ex = 0
-    tmp = list( as.double(res), as.integer(kk), 
-             as.integer(mm), as.integer(n), as.double(pp), as.double(avec), 
-             as.double(bvec), as.integer(funcate), as.double(ex), 
-             as.integer(npp), as.integer(wts))
-    res = tmp[[1]]
-    res[res < 0] = 0
-    res[res > 1] = 1
-    res[kk < 0] = 0
-    res[kk >= sum(wts)] = 1
-  }, RF = {
-    kk1 = kk
-    kk[kk < 0] = 0
-    pp = rep(pp, wts)
-    mm = length(kk)
-    res = double(mm)
-    n = length(pp)
-    mat = rep(0, (n + 1) * (n + 2))
-    tmp = list( as.double(res), as.integer(kk), 
-             as.integer(mm), as.integer(n), as.double(pp), as.double(mat))
-    res = tmp[[1]]
-    res[kk1 < 0] = 0
-    res[kk1 >= sum(wts)] = 1
-  }, RNA = {
-    pp = rep(pp, wts)
-    muk = sum(pp)
-    sigmak = sqrt(sum(pp * (1 - pp)))
-    gammak = sum(pp * (1 - pp) * (1 - 2 * pp))
-    ind = gammak/(6 * sigmak^3)
-    kk1 = (kk + 0.5 - muk)/sigmak
-    vkk.r = pnorm(kk1) + gammak/(6 * sigmak^3) * (1 - kk1^2) * 
-      dnorm(kk1)
-    vkk.r[vkk.r < 0] = 0
-    vkk.r[vkk.r > 1] = 1
-    res = vkk.r
-  }, `NA` = {
-    pp = rep(pp, wts)
-    muk = sum(pp)
-    sigmak = sqrt(sum(pp * (1 - pp)))
-    gammak = sum(pp * (1 - pp) * (1 - 2 * pp))
-    kk1 = (kk + 0.5 - muk)/sigmak
-    res = pnorm(kk1)
-  }, PA = {
-    pp = rep(pp, wts)
-    muk = sum(pp)
-    res = ppois(q = kk, lambda = muk)
-  })
-  return(res)
-}
+
 
 if(is.na(method)==TRUE&n<2000){crit.value.disc<- b[min(which((1 -ppoibin(b , prob.vec,method = "DFT-CF")) <= alpha))]}
 if(is.na(method)==TRUE&n>=2000){crit.value.disc<- b[min(which((1 -ppoibin(b , prob.vec,method = "RNA")) <= alpha))]}

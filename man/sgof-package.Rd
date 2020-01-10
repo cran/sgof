@@ -8,15 +8,15 @@
 This package implements seven different methods for multiple testing problems. 
 The \cite{Benjamini and Hochberg (1995)} false discovery rate controlling procedure and its modification for  dependent tests \cite{Benjamini and Yekutieli (2001)}, 
 the method called Binomial SGoF  proposed in \cite{Carvajal Rodríguez et al. (2009)} and its conservative and bayesian versions called Conservative SGoF (\cite{de Uña Álvarez, 2011}) and Bayesian SGoF (\cite{Castro Conde  and de Uña Álvarez, 2013 13/06}), respectively,
-and the BB-SGoF  (Beta-Binomial SGoF, \cite{de Uña Álvarez, 2012}) and Discrete SGoF (\cite{Castro Conde et al., 2014}) procedures which are  adaptations of SGoF method for possibly correlated tests and for discrete tests, respectively. Number of rejections, FDR and adjusted p-values are computed among other things.
+and the BB-SGoF  (Beta-Binomial SGoF, \cite{de Uña Álvarez, 2012}) and Discrete SGoF (\cite{Castro Conde et al., 2015}) procedures which are  adaptations of SGoF method for possibly correlated tests and for discrete tests, respectively. Number of rejections, FDR and adjusted p-values are computed among other things.
 }
 
 \details{
 \tabular{ll}{
 Package: \tab sgof\cr
 Type: \tab Package\cr
-Version: \tab 2.3\cr
-Date: \tab 2016-04-18\cr
+Version: \tab 2.3.2\cr
+Date: \tab 2020-01-10\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
@@ -64,12 +64,11 @@ de Uña Álvarez J (2011). On the statistical properties of SGoF multitesting me
 de Uña Álvarez J (2012). The Beta-Binomial SGoF method for multiple dependent tests. \emph{Statistical Applications in Genetics and Molecular Biology}, Vol. 11, Iss. 3, Article 14.
 
 
-
-	
 Hong Y. (2013). On computing the distribution functions for the Poisson binomial
 distribution. \emph{Computational Statistics and Data Analysis} 59, 41-51.
 
 Hong Y. (2019). poibin: The Poisson Binomial Distribution. R package version 1.4
+
 
 Pounds, S. and C. Cheng (2006). Robust estimation of the false discovery rate.
 \emph{Bioinformatics} 22 (16), 1979-1987.
