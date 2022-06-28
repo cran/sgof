@@ -64,11 +64,10 @@ Castro Conde I, Döhler S and de Uña Álvarez J (2015). An extended sequential 
 de Uña Álvarez J (2011). On the statistical properties of SGoF multitesting method. 
 \emph{Statistical Applications in Genetics and Molecular Biology}, Vol. 10, Iss. 1, Article 18.
 
+Durand G, Junge F (2021). DiscreteFDR: Multiple Testing Procedures with Adaptation for Discrete Tests. 
+ R package version  1.3.6
 
-Heller R,   Gur  H and  Yaacoby S. (2012). discreteMTP: Multiple testing procedures for discrete test statistics.
- R package version 0.1-2
 
-	
 Hong Y. (2013). On computing the distribution functions for the Poisson binomial
 distribution. \emph{Computational Statistics and Data Analysis} 59, 41-51.
 
@@ -89,17 +88,19 @@ Pounds, S. and C. Cheng (2006). Robust estimation of the false discovery rate.
 \examples{
 
 
-require(discreteMTP)
+require(DiscreteFDR)
 
 data(amnesia) #discrete data
 
-A11 <- amnesia$AmnesiaCases 
-A21 <- sum(amnesia$AllAdverseCases) - A11
-A12 <- amnesia$AllAdverseCases - A11
-A22 <- sum(amnesia$AllAdverseCases) - sum(amnesia$AmnesiaCases) - A12
+AllAdverseCases<-amnesia$OtherAdverseCases + amnesia$AmnesiaCases
+A11 <- amnesia$AmnesiaCases
+A21 <- sum(AllAdverseCases) - A11
+A12 <- AllAdverseCases - A11
+A22 <- sum(AllAdverseCases) - sum(amnesia$AmnesiaCases) - A12
 
 A1. <- sum(amnesia$AmnesiaCases)
-A2. <- sum(amnesia$AllAdverseCases) - A1.   
+A2. <- sum(AllAdverseCases) - A1.
+  
 n <- A11 + A12
 k <- pmin(n,A1.)
 

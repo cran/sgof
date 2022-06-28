@@ -63,6 +63,8 @@ de Uña Álvarez J (2011). On the statistical properties of SGoF multitesting me
 
 de Uña Álvarez J (2012). The Beta-Binomial SGoF method for multiple dependent tests. \emph{Statistical Applications in Genetics and Molecular Biology}, Vol. 11, Iss. 3, Article 14.
 
+Durand G, Junge F (2021). DiscreteFDR: Multiple Testing Procedures with Adaptation for Discrete Tests. 
+ R package version  1.3.6
 
 Hong Y. (2013). On computing the distribution functions for the Poisson binomial
 distribution. \emph{Computational Statistics and Data Analysis} 59, 41-51.
