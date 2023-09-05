@@ -2,8 +2,8 @@ Encoding: UTF-8
 Package: sgof
 Type: Package
 Title: Multiple Hypothesis Testing
-Version: 2.3.3
-Date: 2022-06-28
+Version: 2.3.4
+Date: 2023-09-05
 Author: Irene Castro Conde and Jacobo de Una Alvarez
 Maintainer: Irene Castro Conde <irene.castro@uvigo.es>
 Depends: R (>= 3.6), stats, poibin
@@ -12,6 +12,6 @@ Description: Seven different methods for multiple testing problems. The SGoF-typ
 License: GPL-2
 LazyData: yes
 NeedsCompilation: no
-Packaged: 2022-06-28 16:33:30 UTC; erea_
+Packaged: 2023-09-05 10:20:49 UTC; erea_
 Repository: CRAN
-Date/Publication: 2022-06-29 00:20:02 UTC
+Date/Publication: 2023-09-05 12:40:24 UTC

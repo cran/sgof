@@ -11,16 +11,8 @@ the method called Binomial SGoF  proposed in \cite{Carvajal Rodríguez et al. (2
 and the BB-SGoF  (Beta-Binomial SGoF, \cite{de Uña Álvarez, 2012}) and Discrete SGoF (\cite{Castro Conde et al., 2015}) procedures which are  adaptations of SGoF method for possibly correlated tests and for discrete tests, respectively. Number of rejections, FDR and adjusted p-values are computed among other things.
 }
 
-\details{
-\tabular{ll}{
-Package: \tab sgof\cr
-Type: \tab Package\cr
-Version: \tab 2.3.2\cr
-Date: \tab 2020-01-10\cr
-License: \tab GPL-2\cr
-LazyLoad: \tab yes\cr
-}
 
+\details{
 This package incorporates the functions \code{BH},\code{BY}, \code{SGoF}, \code{Binomial.SGoF}, \code{Bayesian.SGoF}, \code{Discrete.SGoF}  and \code{BBSGoF}, which call the methods aforementioned. For a complete list of functions, use library(help="sgof").
 }
 
