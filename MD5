@@ -1,4 +1,4 @@
-da0c79813cffa4dc2a7eac0f591895e8 *DESCRIPTION
+85d15c576d571e8572e533ee57ccf631 *DESCRIPTION
 f81f811f728ba885c594290c11e034c2 *NAMESPACE
 b797fda546ab5f9df3623287b81d7b66 *R/BBSGoF.R
 92ec19dd99748eab840c4a1ca9401f59 *R/BH.R
@@ -31,7 +31,7 @@ d23bb0975215fdca68507c63b7f89581 *R/summary.SGoF.R
 e63e6228d75d9ea822e398bfef339b3d *man/BY.Rd
 b0ee93689f41172f439f1f0f70a2740d *man/Bayesian.SGoF.Rd
 8e9c3e4dcf3a77037f0949c8f2230721 *man/Binomial.SGoF.Rd
-f4eb5f2a5f8ff98940053857b50d3269 *man/Discrete.SGoF.Rd
+250f9381d116f8aba468765ad5ba7741 *man/Discrete.SGoF.Rd
 bd4efee6977b852ef5fc466c60b22a43 *man/Hedenfalk.Rd
 120cbf969e044284eae7662181583481 *man/SGoF.Rd
 084a0659c266ebbee82375f15bf38805 *man/plot.BBSGoF.Rd
@@ -39,7 +39,7 @@ bd4efee6977b852ef5fc466c60b22a43 *man/Hedenfalk.Rd
 aa5763cf3f08cd00700b3c3aea10c5b9 *man/plot.BY.Rd
 e36268b53aae26b102eace24b9042ea7 *man/plot.Binomial.SGoF.Rd
 0135ec2c8b53220fbfce57a27264a7e0 *man/plot.SGoF.Rd
-05afa250c0edbf061df7a5462f4bcda1 *man/sgof-package.Rd
+5debb1070180a4fc1af29b960294e50c *man/sgof-package.Rd
 364ef16ab1d4876ad00d7dcf5c905d6e *man/summary.BBSGoF.Rd
 9df792f3cf8d41cf521803b1775e5c21 *man/summary.BH.Rd
 7e7ed9cf5b4ca6722cbed89cd1109ae9 *man/summary.BY.Rd

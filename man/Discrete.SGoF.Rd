@@ -64,9 +64,7 @@ Castro Conde I, Döhler S and de Uña Álvarez J (2015). An extended sequential 
 de Uña Álvarez J (2011). On the statistical properties of SGoF multitesting method. 
 \emph{Statistical Applications in Genetics and Molecular Biology}, Vol. 10, Iss. 1, Article 18.
 
-Durand G, Junge F (2021). DiscreteFDR: Multiple Testing Procedures with Adaptation for Discrete Tests. 
- R package version  1.3.6
-
+Kihn C, Döhler S, Junge F (2024). DiscreteDatasets: Example Data Sets for Use with Discrete Statistical Tests. R package version 0.1.1
 
 Hong Y. (2013). On computing the distribution functions for the Poisson binomial
 distribution. \emph{Computational Statistics and Data Analysis} 59, 41-51.
@@ -88,7 +86,7 @@ Pounds, S. and C. Cheng (2006). Robust estimation of the false discovery rate.
 \examples{
 
 
-require(DiscreteFDR)
+require(DiscreteDatasets)
 
 data(amnesia) #discrete data
 
